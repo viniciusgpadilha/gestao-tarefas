@@ -23,6 +23,12 @@ Route::post('/login', function (Request $request) {
     ]);
 });
 
+Route::get('/users', function (Request $request) {
+    return [
+        ['id' => 1, 'nome' => 'João'],
+        ['id' => 2, 'nome' => 'Tido']
+    ];
+});
 
 Route::get('/user', function (Request $request) {
     return $request->user();
