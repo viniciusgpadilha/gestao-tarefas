@@ -23,7 +23,7 @@ Route::post('/login', function (Request $request) {
     ]);
 });
 
-Route::get('/users', function (Request $request) {
+Route::get('/tasks', function (Request $request) {
     return [
         ['id' => 1, 'nome' => 'João'],
         ['id' => 2, 'nome' => 'Tido']
