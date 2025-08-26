@@ -26,7 +26,8 @@ Route::post('/login', function (Request $request) {
 Route::get('/tasks', function (Request $request) {
     return [
         ['id' => 1, 'nome' => 'João'],
-        ['id' => 2, 'nome' => 'Tido']
+        ['id' => 2, 'nome' => 'Tido'],
+        ['id' => 3, 'nome' => 'Rafael']
     ];
 });
 
