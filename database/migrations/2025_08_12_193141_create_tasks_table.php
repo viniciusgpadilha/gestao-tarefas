@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->integer('status');
-            $table->foreignId('category_id');
+            $table->integer('category_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });

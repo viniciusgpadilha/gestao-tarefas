@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TasksController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,11 +26,13 @@ Route::post('/login', function (Request $request) {
 
 Route::get('/tasks', function (Request $request) {
     return [
-        ['id' => 1, 'nome' => 'João'],
-        ['id' => 2, 'nome' => 'Tido'],
-        ['id' => 3, 'nome' => 'Rafael']
+        ['id' => 1, 'description' => 'João', 'status' => 1],
+        ['id' => 2, 'description' => 'Tido', 'status' => 2],
+        ['id' => 3, 'description' => 'Rafael', 'status' => 2]
     ];
 });
+
+Route::post('/tasks/store', [TasksController::class, 'store'])->name('store');
 
 Route::get('/user', function (Request $request) {
     return $request->user();
