@@ -24,15 +24,17 @@ Route::post('/login', function (Request $request) {
     ]);
 });
 
-Route::get('/tasks', function (Request $request) {
-    return [
-        ['id' => 1, 'description' => 'João', 'status' => 1],
-        ['id' => 2, 'description' => 'Tido', 'status' => 2],
-        ['id' => 3, 'description' => 'Rafael', 'status' => 2]
-    ];
-});
+Route::get('/tasks', [TasksController::class, 'index'])->name('index');
+
+Route::get('/tasks/{id}', [TasksController::class, 'get'])->name('get');
+
+Route::put('/tasks/update/{id}', [TasksController::class, 'update'])->name('update');
+
+Route::delete('/tasks/delete/{id}', [TasksController::class, 'delete'])->name('delete');
 
 Route::post('/tasks/store', [TasksController::class, 'store'])->name('store');
+
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
