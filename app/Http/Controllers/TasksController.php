@@ -9,8 +9,7 @@ class TasksController extends Controller
 {
     protected $task;
 
-    public function __construct(Task $task)
-    {
+    public function __construct(Task $task) {
         $this->task = $task; 
     }
 
